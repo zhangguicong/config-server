@@ -1,0 +1,50 @@
+
+server:
+  port: 8781
+
+spring:
+  redis:
+    database: 0
+    host: 127.0.0.1
+    port: 6379
+    timeout:  2000
+  rabbitmq:
+	  host: localhost
+	  port: 5672
+	  username: guest
+	  password: guest  
+
+#自定义负载均衡策略
+product-service:
+   ribbon:
+     NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule
+#熔断开关
+feign:
+  hystrix:
+    enabled: true
+  client:
+    config:
+      default:
+        connectTimeout: 2000
+        readTimeout: 2000
+#把hystrix的超时时间禁用(不推荐)
+#hystrix:
+#  command:
+#    default:
+#      execution:
+#        timeout:
+#          enabled: false
+#设置超时时间为4s
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 2000
+#暴露全部的监控信息
+management:
+	endpoints:
+	  web:
+	    exposure:
+	      include: "*"
