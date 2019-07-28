@@ -7,7 +7,7 @@ spring:
     port: 5672
     username: guest
     password: guest
-	#暴露全部的监控信息
+#暴露全部的监控信息
 management:
   endpoints:
     web:
