@@ -2,7 +2,11 @@ server:
   port: 9000
 #服务名称
 spring:
-
+# rabbitmq:
+# host: localhost 
+# port: 5672 
+# username: guest
+# password: guest 
 #自定义路由映射
 zuul:
   routes:
@@ -15,3 +19,9 @@ zuul:
   #ignored-services: order-service
   #处理http请求头为空的问题
   sensitive-headers:
+#暴露全部的监控信息
+management: 
+  endpoints: 
+    web: 
+      exposure: 
+        include: "*"
