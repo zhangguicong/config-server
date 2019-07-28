@@ -1,9 +1,17 @@
 server:
   port: 8771
 
-#服务的名称
 spring:
-  application:
-    name: product-service
+	  rabbitmq:
+	    host: localhost
+	    port: 5672
+	    username: guest
+	    password: guest
+	#暴露全部的监控信息
+management:
+	  endpoints:
+	    web:
+	      exposure:
+	        include: "*"
 env: test
 branch: master
