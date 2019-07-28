@@ -1,0 +1,17 @@
+server:
+  port: 9000
+#服务名称
+spring:
+
+#自定义路由映射
+zuul:
+  routes:
+    #设置以/apigateway/映射的路由调用接口
+    order-service: /apigateway/order/**
+    product-service: /apigateway/product/**
+  #统一入口是上面的配置
+  ignored-patterns: /*-service/**
+    #隐藏该路由映射 不对外提供接口
+  #ignored-services: order-service
+  #处理http请求头为空的问题
+  sensitive-headers:
