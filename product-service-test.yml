@@ -12,6 +12,6 @@ management:
   endpoints:
     web:
       exposure:
-	      include: "*"
+	include: "*"
 env: test
 branch: master
