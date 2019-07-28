@@ -9,10 +9,10 @@ spring:
     port: 6379
     timeout:  2000
   rabbitmq:
-	  host: localhost
-	  port: 5672
-	  username: guest
-	  password: guest  
+    host: localhost 
+    port: 5672 
+    username: guest
+    password: guest  
 
 #自定义负载均衡策略
 product-service:
