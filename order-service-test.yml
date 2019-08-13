@@ -8,11 +8,11 @@ spring:
     host: 127.0.0.1
     port: 6379
     timeout:  2000
-#   rabbitmq:
-#     host: localhost 
-#     port: 5672 
-#     username: guest
-#     password: guest  
+  rabbitmq:
+    host: 172.16.158.53 
+    port: 5672 
+    username: guest
+    password: guest  
 
 #自定义负载均衡策略
 product-service:
